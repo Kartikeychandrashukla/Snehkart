@@ -7,25 +7,6 @@ import PERSON_2 from '../assets/kartikeyProfile.jpeg';
 const Hero: React.FC = () => {
   return (
     <div id="home" className="homeWrapper">
-      {/* Single background layer spanning both sections */}
-      <div className="homeBg" aria-hidden="true">
-        <div className="homeBgOrb homeBgOrb1" />
-        <div className="homeBgOrb homeBgOrb2" />
-        <div className="homeBgOrb homeBgOrb3" />
-        <div className="homeBgOrb homeBgOrb4" />
-        <div className="homeBgGrid" />
-        <div className="homeBgRing homeBgRing1" />
-        <div className="homeBgRing homeBgRing2" />
-        <div className="homeBgLine homeBgLine1" />
-        <div className="homeBgLine homeBgLine2" />
-        <div className="homeBgLine homeBgLine3" />
-        <div className="homeBgDot homeBgDot1" />
-        <div className="homeBgDot homeBgDot2" />
-        <div className="homeBgDot homeBgDot3" />
-        <div className="homeBgDot homeBgDot4" />
-        <div className="homeBgDot homeBgDot5" />
-      </div>
-
       {/* Section 1 — Heading */}
       <section className="heroLanding">
         <div className="centerText">

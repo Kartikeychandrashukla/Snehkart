@@ -284,14 +284,13 @@ a {
 
 
   .homeWrapper {
-  overflow: hidden;  /* add this */
+  overflow: hidden;
   position: relative;
-  background-color: #000;
 }
 
-/* Single background layer pinned to the full wrapper height */
+/* Single background layer pinned to the full viewport */
 .homeBg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
@@ -648,10 +647,13 @@ a {
    ============================================================ */
 
 .footer {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: backdrop-filter;
   position: sticky;
   bottom: 0;
   z-index: 100;
