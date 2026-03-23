@@ -19,6 +19,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 a {
@@ -280,7 +281,9 @@ a {
    HOME WRAPPER — unified background across both sections
    ============================================================ */
 
-.homeWrapper {
+
+  .homeWrapper {
+  overflow: hidden;  /* add this */
   position: relative;
   background-color: #000;
 }
@@ -492,6 +495,7 @@ a {
   justify-content: center;
   padding-top: 12vh;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .centerText {
