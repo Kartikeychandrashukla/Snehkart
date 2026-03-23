@@ -277,6 +277,211 @@ a {
 }
 
 /* ============================================================
+   HOME WRAPPER — unified background across both sections
+   ============================================================ */
+
+.homeWrapper {
+  position: relative;
+  background-color: #000;
+}
+
+/* Single background layer pinned to the full wrapper height */
+.homeBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blurred orbs — spread top-to-bottom across the full page */
+.homeBgOrb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.32;
+  animation: orbFloat 10s ease-in-out infinite alternate;
+}
+
+.homeBgOrb1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  top: -80px;
+  left: -120px;
+  animation-duration: 11s;
+}
+
+.homeBgOrb2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #00e5c8 0%, transparent 70%);
+  top: 30%;
+  right: -100px;
+  animation-duration: 13s;
+  animation-delay: -5s;
+}
+
+.homeBgOrb3 {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  bottom: -60px;
+  left: -80px;
+  animation-duration: 9s;
+  animation-delay: -3s;
+}
+
+.homeBgOrb4 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #f3ff0c 0%, transparent 70%);
+  top: 55%;
+  left: 42%;
+  opacity: 0.1;
+  animation-duration: 15s;
+  animation-delay: -7s;
+}
+
+@keyframes orbFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(28px, -22px) scale(1.05); }
+  100% { transform: translate(-18px, 28px) scale(0.97); }
+}
+
+/* Dot grid — spans full height, fades at top & bottom edges */
+.homeBgGrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(124, 58, 237, 0.22) 1px, transparent 1px);
+  background-size: 38px 38px;
+  opacity: 0.55;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+/* Glowing rings — anchored in the top half (heading area) */
+.homeBgRing {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+.homeBgRing1 {
+  width: 440px;
+  height: 440px;
+  border-color: rgba(124, 58, 237, 0.2);
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0s;
+}
+
+.homeBgRing2 {
+  width: 700px;
+  height: 700px;
+  border-color: rgba(0, 229, 200, 0.1);
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: -3s;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
+}
+
+/* Diagonal accent lines — one in each half */
+.homeBgLine {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.5), rgba(0, 229, 200, 0.5), transparent);
+  animation: lineSweep 8s ease-in-out infinite alternate;
+}
+
+.homeBgLine1 {
+  width: 65%;
+  top: 18%;
+  left: -8%;
+  transform: rotate(-6deg);
+  animation-delay: 0s;
+}
+
+.homeBgLine2 {
+  width: 55%;
+  top: 50%;
+  right: -5%;
+  transform: rotate(-6deg);
+  animation-delay: -3s;
+}
+
+.homeBgLine3 {
+  width: 60%;
+  top: 78%;
+  left: -6%;
+  transform: rotate(-6deg);
+  animation-delay: -6s;
+}
+
+@keyframes lineSweep {
+  0%   { opacity: 0.15; transform: rotate(-6deg) translateX(0); }
+  100% { opacity: 0.5;  transform: rotate(-6deg) translateX(36px); }
+}
+
+/* Floating accent dots — scattered across both halves */
+.homeBgDot {
+  position: absolute;
+  border-radius: 50%;
+  animation: dotBlink 4s ease-in-out infinite alternate;
+}
+
+.homeBgDot1 {
+  width: 8px; height: 8px;
+  background: #00e5c8;
+  box-shadow: 0 0 12px 3px rgba(0, 229, 200, 0.6);
+  top: 12%; left: 14%;
+  animation-delay: 0s;
+}
+
+.homeBgDot2 {
+  width: 6px; height: 6px;
+  background: #7c3aed;
+  box-shadow: 0 0 10px 3px rgba(124, 58, 237, 0.6);
+  top: 20%; right: 16%;
+  animation-delay: -1.5s;
+}
+
+.homeBgDot3 {
+  width: 5px; height: 5px;
+  background: #f3ff0c;
+  box-shadow: 0 0 10px 3px rgba(243, 255, 12, 0.5);
+  top: 45%; right: 10%;
+  animation-delay: -0.8s;
+}
+
+.homeBgDot4 {
+  width: 7px; height: 7px;
+  background: #7c3aed;
+  box-shadow: 0 0 12px 3px rgba(124, 58, 237, 0.6);
+  top: 68%; left: 12%;
+  animation-delay: -2.5s;
+}
+
+.homeBgDot5 {
+  width: 6px; height: 6px;
+  background: #00e5c8;
+  box-shadow: 0 0 10px 3px rgba(0, 229, 200, 0.6);
+  top: 82%; right: 18%;
+  animation-delay: -3.5s;
+}
+
+@keyframes dotBlink {
+  0%   { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.4); }
+}
+
+/* ============================================================
    HERO — SECTION 1 (Landing / Heading)
    ============================================================ */
 
@@ -286,12 +491,14 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding-top: 12vh;
-  background-color: #000;
+  position: relative;
 }
 
 .centerText {
   text-align: center;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .heading {
@@ -355,14 +562,16 @@ a {
   align-items: center;
   justify-content: space-around;
   padding: 60px;
-  background-color: #000;
   min-height: 100vh;
   gap: 40px;
+  position: relative;
 }
 
 .leftCard,
 .rightCard {
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* --- Founders: Tablet (≤900px) — stack cards vertically --- */
@@ -383,6 +592,50 @@ a {
     gap: 40px;
   }
 }
+
+/* ============================================================
+   SLOGAN BANNER
+   ============================================================ */
+
+.sloganWrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px 64px;
+}
+
+.sloganText {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.45);
+  /* matte frosted pill */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 100px;
+  padding: 18px 40px;
+  max-width: 680px;
+}
+
+.sloganAccent {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+}
+
+.sloganHighlight {
+  color: #00e5c8;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* curly quotes via pseudo-elements */
+.sloganQuoted::before { content: '\2018'; color: #7c3aed; }
+.sloganQuoted::after  { content: '\2019'; color: #7c3aed; }
 
 /* ============================================================
    FOOTER
