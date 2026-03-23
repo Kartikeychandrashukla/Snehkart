@@ -186,7 +186,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #000;
+  background: rgba(0, 0, 0, 0.979);
+
 }
 
 .nav {
@@ -489,13 +490,14 @@ a {
    ============================================================ */
 
 .heroLanding {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding-top: 12vh;
   position: relative;
   margin-bottom: 20px;
+    padding-bottom: 6vh; 
 }
 
 .centerText {
@@ -603,10 +605,10 @@ a {
 
 .sloganWrapper {
   position: relative;
-  z-index: 1;
+  z-index: 1;   
   display: flex;
   justify-content: center;
-  padding: 48px 24px 64px;
+  padding: 150px 24px 150px;
 }
 
 .sloganText {
@@ -646,7 +648,10 @@ a {
    ============================================================ */
 
 .footer {
-  background-color: #000;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: sticky;
   bottom: 0;
   z-index: 100;
